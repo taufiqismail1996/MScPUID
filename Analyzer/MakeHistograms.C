@@ -1,7 +1,8 @@
 void MakeHistograms(){
   //traditional method
   
-  TFile"f = new TFile("inputForMVATraining_CHS.root");
+  /*
+  TFile*f = new TFile("inputForMVATraining_CHS.root");
   TTree* t;
   f->GetObject("t",t);
   
@@ -11,11 +12,10 @@ void MakeHistograms(){
   c1->cd(1); t->Draw("dR2Mean");
   c1->cd(2); t->Draw("majW");
   c1->cd(3); t->Draw("minW");
+  */
   
   
-  
-  
-  
+  //traditional method #2
   /*
   TCanvas *c1 = new TCanvas();
   TFile *input = new TFile("inputForMVATraining_CHS.root,"read");
@@ -37,8 +37,7 @@ void MakeHistograms(){
                            
  */
  
-//using RDataFrama  
-  from ROOT.ROOT import RDataFrame
+//using RDataFrame
 df = RDataFrame("ntuple", "inputForMVATraining_CHS.root")
 h2 = df.Filter("dR2Mean")\
        .Histo1D(("dR2Mean", "dR2Mean;dR2Mean Graph;Number of Entries"), "dR2Mean")
