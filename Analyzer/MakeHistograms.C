@@ -12,7 +12,7 @@ void MakeHistograms(){
   c1->cd(1); t->Draw("dR2Mean");
   c1->cd(2); t->Draw("majW");
   c1->cd(3); t->Draw("minW");
-  */
+  
   
   
   //traditional method #2
