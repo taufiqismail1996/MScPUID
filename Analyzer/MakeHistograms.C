@@ -30,8 +30,8 @@ void MakeHistograms(){
                            
 //using RDataFrame
 df = RDataFrame("ntuple", "inputForMVATraining_CHS.root")
-h2 = df.Filter("dR2Mean")\
+h1 = df.Define("dR2Mean")\
        .Histo1D(("dR2Mean", "dR2Mean;dR2Mean Graph;Number of Entries"), "dR2Mean")
-h2.Draw()
+h1.Draw()
 }
 */
